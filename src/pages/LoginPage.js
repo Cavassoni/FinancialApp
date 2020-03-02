@@ -1,33 +1,20 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
+import { Container, Header, Left, Icon, Content } from 'native-base';
 
 class LoginPage extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-        }
-    }
 
     render() {
         return (
-            <View style={styles.container}>
-                <Image style={styles.logo} source={{uri: './../../content/logo.png' }} />
-                <View>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                    <Text>Tela de loginnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Text>
-                </View>
-            </View>
-        )
+            <Container>
+                <Content contentContainerStyle={{
+                    flex: 1,
+                    alignItems: "center",
+                    justifyContent: "center"
+                }}>
+                    <Text>Login Screen</Text>
+                </Content>
+            </Container>);
     }
 }
 
@@ -35,16 +22,11 @@ export default LoginPage;
 
 const styles = StyleSheet.create({
     container: {
-        height: 55,
+        // height: 55,
 
         // flex-box
-        alignItems: "center",
-        flexDirection: "row"
-    },
-    logo: {
-        aspectRatio: 1,
         flex: 1,
-        marginLeft: 15,
-        borderRadius: 50,
-    }
+        alignItems: "center",
+        justifyContent: "center",
+    },
 })

@@ -6,7 +6,7 @@ const HeaderIcon = () => (
     <View>
         <Image
             style={styles.logo}
-            source={require('./../../content/logo33.png')}
+            source={require('./../../assets/logo33.png')}
         />
     </View>
 );
