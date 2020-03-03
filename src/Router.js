@@ -5,33 +5,62 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
-
-import LoginPage from './pages/LoginPage';
+import AnalisePage from './pages/AnalisePage';
+import FearAndGreedPage from './pages/FearAndGreedPage';
 import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import NoticiasFinMovPage from './pages/NoticiasFinMovPage';
+import NoticiasGeraisPage from './pages/NoticiasGeraisPage';
+import PagamentoPage from './pages/PagamentoPage';
+import TradesPage from './pages/TradesPage';
+
 import HeaderIcon from './components/HeaderIcon';
 import CustomDrawerNavigator from './components/CustomDrawerNavigator';
 
 
-const DrawerStack = createDrawerNavigator({
+const DrawerStack = createStackNavigator({
     'Home': {
         screen: HomePage
     },
+    'Trades': {
+        screen: TradesPage,
+        navigationOptions: {
+            title: 'Trades'
+        }
+    },
+    'Analise': {
+        screen: AnalisePage,
+        navigationOptions: {
+            title: 'Análise'
+        }
+    },
+    'FearAndGreed': {
+        screen: FearAndGreedPage,
+        navigationOptions: {
+            title: 'Fear And Greed Index'
+        }
+    },
+    'NoticiasFinMov': {
+        screen: NoticiasFinMovPage,
+        navigationOptions: {
+            title: 'Notícias'
+        }
+    },
+    'NoticiasGerais': {
+        screen: NoticiasGeraisPage,
+        navigationOptions: {
+            title: 'Notícias'
+        }
+    },
+    'Pagamento': {
+        screen: PagamentoPage,
+        navigationOptions: {
+            title: 'Pagamento'
+        }
+    },
 }, {
-    gestureEnabled: false,
-    contentComponent: CustomDrawerNavigator
-})
-
-const DrawerNavigation = createStackNavigator({
-    DrawerStack: {
-        screen: DrawerStack
-    }
-}, {
-    headerMode: 'float',
     gestureEnabled: false,
     defaultNavigationOptions: ({ navigation }) => ({
-        headerStyle: {
-            backgroundColor: 'green'
-        },
         title: 'Financial Move',
         headerLeft: () => (
             <TouchableOpacity
@@ -45,7 +74,7 @@ const DrawerNavigation = createStackNavigator({
                 <Icon name='menu' size={25} color='#fff' />
             </TouchableOpacity>
         ),
-        headerRight: () => (<HeaderIcon />),
+        headerRight: () => (<HeaderIcon navigation={navigation} />),
         headerStyle: {
             backgroundColor: '#212121'
         },
@@ -55,6 +84,16 @@ const DrawerNavigation = createStackNavigator({
         },
         headerTitleAlign: 'center'
     })
+})
+
+const DrawerNavigation = createDrawerNavigator({
+    DrawerStack: {
+        screen: DrawerStack
+    }
+}, {
+    headerMode: 'float',
+    gestureEnabled: false,
+    contentComponent: CustomDrawerNavigator,
 })
 
 // login stack

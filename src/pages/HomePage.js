@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, ImageBackground, Image } from 'react-native';
 
-class HomePage extends React.Component {
+export default class HomePage extends React.Component {
 
     render() {
         return (
@@ -18,8 +18,6 @@ class HomePage extends React.Component {
         );
     }
 }
-
-export default HomePage;
 
 const styles = StyleSheet.create({
     container: {

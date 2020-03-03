@@ -31,9 +31,9 @@ export default class CustomDrawerNavigator extends React.Component {
   }
 
   click(navigation, screen) {
-    navigation.navigate(screen);
-    navigation.toggleDrawer();
     this.setState({ showSubMenuNoticias: false })
+    navigation.toggleDrawer();
+    navigation.navigate(screen);
   }
 
   render() {
@@ -41,7 +41,7 @@ export default class CustomDrawerNavigator extends React.Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity
-          onPress={() => this.click(navigation, 'Home')}
+          onPress={() => this.click(navigation, 'Trades')}
           style={styles.itemMenu}
         >
           <Icon name='trending-up' style={styles.icon} />
@@ -73,14 +73,14 @@ export default class CustomDrawerNavigator extends React.Component {
         {this.state.showSubMenuNoticias && (
           <View style={styles.subItemMenu}>
             <TouchableOpacity
-              onPress={() => this.click(navigation, 'Noticias')}
+              onPress={() => this.click(navigation, 'NoticiasFinMov')}
               style={styles.itemMenu}
             >
               <IconEntypo name='news' style={styles.icon} />
               <Text style={styles.textSubItemMenu}>Financial Move</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.click(navigation, 'Noticias')}
+              onPress={() => this.click(navigation, 'NoticiasGerais')}
               style={styles.itemMenu}
             >
               <IconEntypo name='news' style={styles.icon} />
