@@ -12,13 +12,14 @@ import LoginPage from './pages/LoginPage';
 import NoticiasFinMovPage from './pages/NoticiasFinMovPage';
 import NoticiasGeraisPage from './pages/NoticiasGeraisPage';
 import PagamentoPage from './pages/PagamentoPage';
+import SignupScreen from './pages/SignupScreen';
 import TradesPage from './pages/TradesPage';
 
 import HeaderIcon from './components/HeaderIcon';
 import CustomDrawerNavigator from './components/CustomDrawerNavigator';
 
 
-const DrawerStack = createStackNavigator({
+const StackNav = createStackNavigator({
     'Home': {
         screen: HomePage
     },
@@ -88,7 +89,7 @@ const DrawerStack = createStackNavigator({
 
 const DrawerNavigation = createDrawerNavigator({
     DrawerStack: {
-        screen: DrawerStack
+        screen: StackNav
     }
 }, {
     headerMode: 'float',
@@ -101,16 +102,12 @@ const LoginStack = createStackNavigator({
     'Login': {
         screen: LoginPage
     },
-    // signupScreen: { screen: SignupScreen },
+    'Cadastro': {
+        screen: SignupScreen
+    },
     // forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
 }, {
-    headerMode: 'float',
-    defaultNavigationOptions: {
-        headerStyle: {
-            backgroundColor: 'red'
-        },
-        title: 'You are not logged in'
-    }
+    headerMode: 'none'
 })
 
 const AppNavigator = createStackNavigator({
@@ -124,7 +121,7 @@ const AppNavigator = createStackNavigator({
     // Default config for all screens
     headerMode: 'none',
     title: 'Main',
-    initialRouteName: 'drawerStack'
+    initialRouteName: 'loginStack'
 })
 
 

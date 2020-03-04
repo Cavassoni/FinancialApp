@@ -5,10 +5,8 @@ import { NavigationActions } from 'react-navigation';
 
 // https://oblador.github.io/react-native-vector-icons/
 import IconEntypo from 'react-native-vector-icons/Entypo';
-import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
-import { Icon } from 'native-base';
-
 
 export default class CustomDrawerNavigator extends React.Component {
   constructor(props) {
@@ -51,7 +49,7 @@ export default class CustomDrawerNavigator extends React.Component {
           onPress={() => this.click(navigation, 'Analise')}
           style={styles.itemMenu}
         >
-          <IconMaterialCommunityIcons name='chart-line' style={styles.icon} />
+          <Icon name='chart-line' style={styles.icon} />
           <Text style={styles.textItemMenu}>Análises</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -92,7 +90,7 @@ export default class CustomDrawerNavigator extends React.Component {
           onPress={() => this.click(navigation, 'Pagamento')}
           style={styles.itemMenu}
         >
-          <IconMaterialCommunityIcons name='credit-card-plus' style={styles.icon} />
+          <Icon name='credit-card-plus' style={styles.icon} />
           <Text style={styles.textItemMenu}>Pagamento</Text>
         </TouchableOpacity>
       </View>
