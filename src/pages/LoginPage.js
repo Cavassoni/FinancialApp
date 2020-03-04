@@ -21,6 +21,7 @@ class LoginPage extends React.Component {
     }
 
     login() {
+        this.props.navigation.navigate('Home');
     }
 
     redirectPageCadastro() {
