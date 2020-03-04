@@ -75,7 +75,8 @@ const styles = StyleSheet.create({
         color: '#fff',
         paddingVertical: 10,
         paddingHorizontal: 50,
-        fontSize: 18
+        fontSize: 18,
+        textAlign: 'justify'
     },
     button: {
         marginTop: 60,
