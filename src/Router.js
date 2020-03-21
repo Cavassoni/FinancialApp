@@ -31,8 +31,11 @@ const StackNav = createStackNavigator({
     },
     'Analise': {
         screen: AnalisePage,
-        navigationOptions: {
-            title: 'Análise'
+        navigationOptions: ({ navigation }) => {
+            const { title } = navigation.state.params || 'Análise';
+            return ({
+                title
+            })
         }
     },
     'FearAndGreed': {
@@ -105,7 +108,6 @@ const LoginStack = createStackNavigator({
     'Cadastro': {
         screen: SignupScreen
     },
-    // forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
 }, {
     headerMode: 'none'
 })
@@ -121,30 +123,8 @@ const AppNavigator = createStackNavigator({
     // Default config for all screens
     headerMode: 'none',
     title: 'Main',
-    initialRouteName: 'loginStack'
+    initialRouteName: 'drawerStack'
 })
-
-
-//
-
-
-
-// const HamburgerNavigation = createDrawerNavigator({
-//     Home: {
-//         screen: HomePage
-//     },
-//     Login: {
-//         screen: LoginPage
-//     }
-// }, {
-//     initialRouteName: 'Login',
-//     contentComponent: CustomDrawerContentComponent,
-//     drawerBackgroundColor: '#212121',
-//     defaultNavigationOptions: {
-//         backgroundColor: '#212121',
-//     }
-
-// })
 
 const AppContainer = createAppContainer(AppNavigator);
 
